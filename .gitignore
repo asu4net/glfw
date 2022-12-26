@@ -101,3 +101,17 @@ tests/triangle-vulkan
 tests/window
 tests/windows
 
+# Binaries
+**/bin/
+bin-int/
+
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# Rider files and folder
+.idea/
+
