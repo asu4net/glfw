@@ -1,9 +1,9 @@
-project "GLFW"
+project "glfw"
 kind "StaticLib"
 language "C"
 
-targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
+objdir ("%{wks.location}/Intermediate/" .. outputdir .. "/%{prj.name}")
 
 files
 {
