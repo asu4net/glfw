@@ -2,6 +2,8 @@ project "glfw"
     kind "StaticLib"
     language "C"
 
+    outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
     targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
     objdir ("%{wks.location}/Intermediate/" .. outputdir .. "/%{prj.name}")
 
