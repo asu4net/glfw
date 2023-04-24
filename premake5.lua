@@ -1,9 +1,9 @@
 project "glfw"
-kind "StaticLib"
-language "C"
+    kind "StaticLib"
+    language "C"
 
-targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
-objdir ("%{wks.location}/Intermediate/" .. outputdir .. "/%{prj.name}")
+    targetdir ("%{wks.location}/Binaries/" .. outputdir .. "/%{prj.name}")
+    objdir ("%{wks.location}/Intermediate/" .. outputdir .. "/%{prj.name}")
 
 files
 {
@@ -30,6 +30,7 @@ files
     "src/null_joystick.c",
 
 }
+
 filter "system:linux"
     pic "On"
 
@@ -84,13 +85,14 @@ filter "system:windows"
     { 
         "_GLFW_WIN32",
         "_CRT_SECURE_NO_WARNINGS"
-
     }
-
-filter "configurations:Debug"
-    runtime "Debug"
-    symbols "On"
-
-filter "configurations:Release"
-    runtime "Release"
-    optimize "On"
+    
+    filter "configurations:Debug"
+        defines "NIT_DEBUG"
+        runtime "Debug"
+        symbols "on"
+    
+    filter "configurations:Release"
+        defines "NIT_RELEASE"
+        runtime "Release"
+        optimize "on"
