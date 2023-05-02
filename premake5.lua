@@ -38,7 +38,7 @@ filter "system:linux"
     pic "On"
 
     systemversion "latest"
-    staticruntime "On"
+    staticruntime "off"
 
     files
     {
@@ -62,7 +62,7 @@ filter "system:linux"
 
 filter "system:windows"
     systemversion "latest"
-    staticruntime "On"
+    staticruntime "off"
     
     -- buildoptions{
     --     "/MT"
